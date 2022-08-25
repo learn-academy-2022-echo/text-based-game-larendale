@@ -57,9 +57,42 @@ p 'You are taken to the king, where he sets you have to go on a quest to save hi
 
     
     elsif gate_decision == 'east gate'
-        p 'You decide to go through the East Gate, towards the Dark Forest'
+        p 'You decide to go through the East Gate, towards the Dark Forest, option 1 option2'
+        forest = gets.chomp    
+        if forest == 'yes' 
+            p 'You feel strong as if you are given a blessing' 
+            p 'While walking you come across a well worn path and an overgrown path, which one do you take?'
+                sword = gets.chomp
+                if sword =='well worn path'
+                    p 'You decide to take the well worn path and find the exit to the forest.'
+                elsif sword = 'overgown path'
+                    p 'After struggling through the path you come upon a sword and a stump.Do you attempt to pull it out or turn back?'
+                    superpower = gets.chomp
+                    if superpower == 'pull it out'
+                        p 'You aquire the mythical sword of Larendale and make your way back to the well worn path and find the exit to the forest!' 
+                    elsif superpower == 'turn back'
+                        p 'You decide to turn back and go down the well worn path.'
+                        castle = gets.chomp
+                        p 'Upon exiting the forest you see a musty old castle where the princess is being held captive. Do you attempt to ge through the front or find a way in through the back.'
+                        if castle == 'front' && superpower == 'pull it out'
+                            p 'You come across an ugly troll guarding the front he challenges you to a fight and with the blessing of the forest and the sword of Larnedale you slaughter him within a matter of seconds!'
+                        elsif castle == 'front' && superpower == 'turn back'
+                            p 'You come across an ugly troll guarding the front he challenges you to a fight and with the sword of Larendale you have a tough fought battle losing an eye but come out victorious!'
+                        elsif castle == 'back' 
+                            p 'You try to go thru the back of the castle and activate a trap that drops a boulder and crushes your skull'
+                        else 
+                            P 'You get slaughterd by the troll and he dances on your corpse!'
+                        end
+                else 
+                    p 'While being indecisive you are attacked by a horde of angry rabbits' 
+                end
+        elsif forest == 'no'
+            p 'You feel a little guilt and shame as if you should have helped but you continue on anyways'  
+        else 
+            p 'While deciding you get hit by a poison arrow from a hunter, and die slowly while the bear watches'  
+        end
     else 
-        p "What is your choice, #{user_name}"
+        # p "What is your choice, #{user_name}"
     end
 end
 
